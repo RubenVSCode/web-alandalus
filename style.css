@@ -731,3 +731,44 @@ html {
     font-weight: 700;
     text-align: center;
 }
+
+.seccion-resultados {
+    display: flex;
+    align-items: center;
+    /* Alinea el texto y la foto por el centro vertical */
+    gap: 30px;
+    /* Espacio entre el texto y la imagen */
+    margin-top: 40px;
+    /* Separa esta sección del texto de arriba */
+    padding: 20px 0;
+}
+
+.resultados-contenido {
+    flex: 1.2;
+    /* Le da un poco más de ancho al texto */
+}
+
+.resultados-imagen {
+    flex: 1;
+}
+
+.resultados-imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+/* Ajuste para que en móviles la foto pase abajo y no se vea estrecho */
+@media (max-width: 768px) {
+    .seccion-resultados {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .resultados-imagen {
+        width: 80%;
+        /* La foto no ocupa todo el ancho en móvil para que no sea gigante */
+        margin: 0 auto;
+    }
+}
