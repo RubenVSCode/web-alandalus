@@ -80,3 +80,27 @@
         margin: 10px;
     }
 }
+
+@media (max-width: 768px) {
+    .seccion-resultados {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .resultados-imagen {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .calendario-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .cal-fecha {
+        margin-right: 0;
+    }
+}

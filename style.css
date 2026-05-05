@@ -735,17 +735,13 @@ html {
 .seccion-resultados {
     display: flex;
     align-items: center;
-    /* Alinea el texto y la foto por el centro vertical */
     gap: 30px;
-    /* Espacio entre el texto y la imagen */
     margin-top: 40px;
-    /* Separa esta sección del texto de arriba */
     padding: 20px 0;
 }
 
 .resultados-contenido {
     flex: 1.2;
-    /* Le da un poco más de ancho al texto */
 }
 
 .resultados-imagen {
@@ -759,16 +755,151 @@ html {
     display: block;
 }
 
-/* Ajuste para que en móviles la foto pase abajo y no se vea estrecho */
-@media (max-width: 768px) {
-    .seccion-resultados {
-        flex-direction: column;
-        text-align: center;
-    }
+.calendario-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-    .resultados-imagen {
-        width: 80%;
-        /* La foto no ocupa todo el ancho en móvil para que no sea gigante */
-        margin: 0 auto;
-    }
+.calendario-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 30px;
+}
+
+.calendario-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    justify-content: space-between;
+    padding: 20px 30px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    gap: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 6px solid #ff6600;
+}
+
+.calendario-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.cal-fecha {
+    background: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 70px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+}
+
+.cal-fecha .dia {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.cal-fecha .mes {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.cal-info {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.cal-info h3 {
+    margin-bottom: 8px;
+    line-height: 1.4;
+    font-size: 1.1rem;
+    color: #222;
+}
+
+.btn-calendario {
+    background: #ff6600;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.month-filter {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.month-btn {
+    padding: 8px 18px;
+    border: 2px solid #ff6600;
+    background: transparent;
+    color: #ff6600;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3 ease;
+}
+
+.month-btn.active,
+.month-btn:hover {
+    background: #ff6600;
+    color: white;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.badge-control {
+    background-color: #ff6600;
+    color: white;
+}
+
+.badge-andalucia {
+    background-color: #00a859;
+    color: white;
+}
+
+.badge-espana {
+    background-color: #d4af37;
+    color: white;
+}
+
+.calendario-card[data-type="control"] {
+    border-left-color: #ff6600;
+    background: linear-gradient(to right, rgba(255, 102, 0, 0.233), white 95%);
+}
+
+.calendario-card[data-type="andalucia"] {
+    border-left-color: #00a859;
+    background: linear-gradient(to right, rgba(0, 168, 89, 0.233), white 90%);
+}
+
+.calendario-card[data-type="espana"] {
+    border-left-color: #d4af37;
+    background: linear-gradient(to right, rgba(212, 175, 55, 0.486), white 90%);
 }
